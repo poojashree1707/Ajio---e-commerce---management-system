@@ -1,0 +1,365 @@
+SQL> CREATE TABLE customer1 (
+  2      customer_id NUMBER(5) PRIMARY KEY,
+  3      first_name VARCHAR2(30),
+  4      last_name VARCHAR2(20),
+  5      email VARCHAR2(50),
+  6      phone_number VARCHAR2(15),
+  7      password VARCHAR2(50),
+  8      gender VARCHAR2(10),
+  9      dob DATE,
+ 10      address VARCHAR2(50),
+ 11      city VARCHAR2(20),
+ 12      state VARCHAR2(20),
+ 13      pincode NUMBER(6),
+ 14      registration_date DATE
+ 15  );
+
+Table created.
+
+SQL> INSERT INTO customer1 VALUES (101,'Pooja','Sharma','pooja@gmail.com','9876543210','Pooja@123','Female',DATE '2006-05-15','12 Anna Nagar','Chennai','Tamil Nadu',600040,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (102,'Rahul','Kumar','rahul@gmail.com','9876501234','Rahul@123','Male',DATE '2005-11-20','45 MG Road','Bengaluru','Karnataka',560001,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (103,'Ananya','Reddy','ananya@gmail.com','9876512345','Ananya@123','Female',DATE '2004-08-10','22 Lake View','Hyderabad','Telangana',500081,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (104,'Arjun','Singh','arjun@gmail.com','9876523456','Arjun@123','Male',DATE '2003-12-05','18 Green Park','Delhi','Delhi',110016,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (105,'Priya','Nair','priya@gmail.com','9876534567','Priya@123','Female',DATE '2005-03-18','10 Beach Road','Kochi','Kerala',682001,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (106,'Karthik','Raj','karthik@gmail.com','9876541111','Karthik@123','Male',DATE '2004-01-12','25 Gandhi Street','Coimbatore','Tamil Nadu',641001,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (107,'Meena','Lakshmi','meena@gmail.com','9876542222','Meena@123','Female',DATE '2005-06-25','14 Temple Road','Madurai','Tamil Nadu',625001,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (108,'Vignesh','Kumar','vignesh@gmail.com','9876543333','Vignesh@123','Male',DATE '2003-09-08','8 Park Avenue','Salem','Tamil Nadu',636001,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (109,'Divya','Suresh','divya@gmail.com','9876544444','Divya@123','Female',DATE '2004-11-30','31 River View','Trichy','Tamil Nadu',620001,DATE '2026-07-28');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO customer1 VALUES (110,'Sanjay','Prakash','sanjay@gmail.com','9876545555','Sanjay@123','Male',DATE '2005-02-14','17 Lake Road','Erode','Tamil Nadu',638001,DATE '2026-07-28');
+
+1 row created.
+
+SQL> SELECT * FROM customer1;
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        101 Pooja                          Sharma
+pooja@gmail.com                                    9876543210
+Pooja@123                                          Female     15-MAY-06
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+12 Anna Nagar                                      Chennai
+Tamil Nadu               600040 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        102 Rahul                          Kumar
+rahul@gmail.com                                    9876501234
+Rahul@123                                          Male       20-NOV-05
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+45 MG Road                                         Bengaluru
+Karnataka                560001 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        103 Ananya                         Reddy
+ananya@gmail.com                                   9876512345
+Ananya@123                                         Female     10-AUG-04
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+22 Lake View                                       Hyderabad
+Telangana                500081 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        104 Arjun                          Singh
+arjun@gmail.com                                    9876523456
+Arjun@123                                          Male       05-DEC-03
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+18 Green Park                                      Delhi
+Delhi                    110016 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        105 Priya                          Nair
+priya@gmail.com                                    9876534567
+Priya@123                                          Female     18-MAR-05
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+10 Beach Road                                      Kochi
+Kerala                   682001 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        106 Karthik                        Raj
+karthik@gmail.com                                  9876541111
+Karthik@123                                        Male       12-JAN-04
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+25 Gandhi Street                                   Coimbatore
+Tamil Nadu               641001 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        107 Meena                          Lakshmi
+meena@gmail.com                                    9876542222
+Meena@123                                          Female     25-JUN-05
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+14 Temple Road                                     Madurai
+Tamil Nadu               625001 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        108 Vignesh                        Kumar
+vignesh@gmail.com                                  9876543333
+Vignesh@123                                        Male       08-SEP-03
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+8 Park Avenue                                      Salem
+Tamil Nadu               636001 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        109 Divya                          Suresh
+divya@gmail.com                                    9876544444
+Divya@123                                          Female     30-NOV-04
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+31 River View                                      Trichy
+Tamil Nadu               620001 28-JUL-26
+
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+        110 Sanjay                         Prakash
+sanjay@gmail.com                                   9876545555
+Sanjay@123                                         Male       14-FEB-05
+
+CUSTOMER_ID FIRST_NAME                     LAST_NAME
+----------- ------------------------------ --------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+PASSWORD                                           GENDER     DOB
+-------------------------------------------------- ---------- ---------
+ADDRESS                                            CITY
+-------------------------------------------------- --------------------
+STATE                   PINCODE REGISTRAT
+-------------------- ---------- ---------
+17 Lake Road                                       Erode
+Tamil Nadu               638001 28-JUL-26
+
+
+10 rows selected.
+
+SQL> UPDATE customer1
+  2  SET phone_number = '9999999999'
+  3  WHERE customer_id = 101;
+
+1 row updated.
+
+SQL> DELETE FROM customer1
+  2  WHERE customer_id = 101;
+
+1 row deleted.
+
+SQL> COMMIT;
+
+Commit complete.
