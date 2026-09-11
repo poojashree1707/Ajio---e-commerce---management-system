@@ -1,0 +1,201 @@
+SQL> CREATE TABLE AjioCategory (
+  2      Category_ID NUMBER PRIMARY KEY,
+  3      Category_Name VARCHAR2(50) NOT NULL,
+  4      Category_Description VARCHAR2(100)
+  5  );
+
+Table created.
+
+SQL> CREATE TABLE AjioProduct (
+  2      Product_ID NUMBER PRIMARY KEY,
+  3      Product_Name VARCHAR2(100) NOT NULL,
+  4      Category_ID NUMBER,
+  5      Price NUMBER(10,2),
+  6      Stock NUMBER,
+  7      CONSTRAINT fk_ajio_category
+  8      FOREIGN KEY (Category_ID)
+  9      REFERENCES AjioCategory(Category_ID)
+ 10  );
+
+Table created.
+
+SQL> INSERT INTO AjioCategory VALUES (1, 'Men Fashion', 'Men clothing and accessories');
+
+1 row created.
+
+SQL> INSERT INTO AjioCategory VALUES (2, 'Women Fashion', 'Women clothing and accessories');
+
+1 row created.
+
+SQL> INSERT INTO AjioCategory VALUES (3, 'Footwear', 'Shoes, sandals and footwear');
+
+1 row created.
+
+SQL> INSERT INTO AjioCategory VALUES (4, 'Accessories', 'Fashion accessories');
+
+1 row created.
+
+SQL> INSERT INTO AjioCategory VALUES (5, 'Kids Fashion', 'Clothing and accessories for kids');
+
+1 row created.
+
+SQL>
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> INSERT INTO AjioProduct VALUES (101, 'Men Casual Shirt', 1, 999.00, 50);
+
+1 row created.
+
+SQL> INSERT INTO AjioProduct VALUES (102, 'Women Kurti', 2, 799.00, 40);
+
+1 row created.
+
+SQL> INSERT INTO AjioProduct VALUES (103, 'Running Shoes', 3, 1499.00, 30);
+
+1 row created.
+
+SQL> INSERT INTO AjioProduct VALUES (104, 'Leather Wallet', 4, 599.00, 25);
+
+1 row created.
+
+SQL> INSERT INTO AjioProduct VALUES (105, 'Kids T-Shirt', 5, 499.00, 35);
+
+1 row created.
+
+SQL>
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT * FROM AjioProduct;
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+CATEGORY_ID      PRICE      STOCK
+----------- ---------- ----------
+       101
+Men Casual Shirt
+          1        999         50
+
+       102
+Women Kurti
+          2        799         40
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+CATEGORY_ID      PRICE      STOCK
+----------- ---------- ----------
+
+       103
+Running Shoes
+          3       1499         30
+
+       104
+Leather Wallet
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+CATEGORY_ID      PRICE      STOCK
+----------- ---------- ----------
+          4        599         25
+
+       105
+Kids T-Shirt
+          5        499         35
+
+
+SQL> UPDATE AjioProduct
+  2  SET Price = 1099
+  3  WHERE Product_ID = 101;
+
+1 row updated.
+
+SQL> UPDATE AjioProduct
+  2  SET Stock = 60
+  3  WHERE Product_ID = 103;
+
+1 row updated.
+
+SQL>
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> DELETE FROM AjioProduct
+  2  WHERE Product_ID = 105;
+
+1 row deleted.
+
+SQL> DELETE FROM AjioProduct
+  2  WHERE Product_ID = 104;
+
+1 row deleted.
+
+SQL>
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT
+  2      c.Category_Name,
+  3      p.Product_ID,
+  4      p.Product_Name,
+  5      p.Price,
+  6      p.Stock
+  7  FROM AjioCategory c
+  8  JOIN AjioProduct p
+  9  ON c.Category_ID = p.Category_ID
+ 10  ORDER BY c.Category_Name;
+
+CATEGORY_NAME                                      PRODUCT_ID
+-------------------------------------------------- ----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+     PRICE      STOCK
+---------- ----------
+Footwear                                                  103
+Running Shoes
+      1499         60
+
+Men Fashion                                               101
+Men Casual Shirt
+      1099         50
+
+CATEGORY_NAME                                      PRODUCT_ID
+-------------------------------------------------- ----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+     PRICE      STOCK
+---------- ----------
+
+Women Fashion                                             102
+Women Kurti
+       799         40
+
+
+SQL> SELECT
+  2      c.Category_Name,
+  3      COUNT(p.Product_ID) AS Total_Products
+  4  FROM AjioCategory c
+  5  LEFT JOIN AjioProduct p
+  6  ON c.Category_ID = p.Category_ID
+  7  GROUP BY c.Category_Name
+  8  ORDER BY c.Category_Name;
+
+CATEGORY_NAME                                      TOTAL_PRODUCTS
+-------------------------------------------------- --------------
+Accessories                                                     0
+Footwear                                                        1
+Kids Fashion                                                    0
+Men Fashion                                                     1
+Women Fashion                                                   1
+
+SQL>
