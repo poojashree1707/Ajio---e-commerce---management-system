@@ -22,3 +22,19 @@
 * Chatbot for customer support
 * Personalized offers and notifications
 * Multi-language support
+
+### Stakeholders
+
+* Customers
+* Admin
+* Sellers/Suppliers
+* Warehouse Staff
+* Delivery Partners
+* Payment Gateway Providers
+* Customer Support Team
+* Management
+
+
+### Conclusion
+
+#### The AJIO E-Commerce Management System provides a secure, reliable, and user-friendly online shopping experience. It simplifies product, inventory, order, payment, and delivery management while improving customer satisfaction and business efficiency.
