@@ -1,0 +1,214 @@
+SQL> CREATE TABLE AJIOSeller (
+  2      Seller_ID NUMBER PRIMARY KEY,
+  3      Seller_Name VARCHAR2(30),
+  4      Email VARCHAR2(50),
+  5      Phone_Number VARCHAR2(15),
+  6      Address VARCHAR2(80),
+  7      GST_Number VARCHAR2(20)
+  8  );
+
+Table created.
+
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (301, 'FASHION HUB', 'fashionhub@gmail.com', '9876501234', '12, Anna Nagar, Chennai', '33ABCDE1234F1Z5');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (302, 'STYLE MART', 'stylemart@gmail.com', '9876501235', '45, Gandhi Road, Tambaram', '33BCDEF2345G2Z6');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (303, 'TRENDY WEAR', 'trendywear@gmail.com', '9876501236', '78, MG Road, Coimbatore', '33CDEFG3456H3Z7');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (304, 'URBAN FASHION', 'urbanfashion@gmail.com', '9876501237', '23, Cross Street, Velachery', '33DEFGH4567J4Z8'); 
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (305, 'FASHION POINT', 'fashionpoint@gmail.com', '9876501238', '56, Bharathi Nagar, Madurai', '33EFGHI5678K5Z9'); 
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (306, 'STYLE WORLD', 'styleworld@gmail.com', '9876501239', '18, Lake View Road, Salem', '33FGHIJ6789L6Z1');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (307, 'CLOTHING ZONE', 'clothingzone@gmail.com', '9876501240', '9, Nehru Street, Trichy', '33GHIJK7890M7Z2');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (308, 'FASHION STORE', 'fashionstore@gmail.com', '9876501241', '41, Gandhi Nagar, Erode', '33HIJKL8901N8Z3');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (309, 'TRENDY COLLECTION', 'trendycollection@gmail.com', '9876501242', '67, Temple Road, Tirunelveli', '33IJKLM9012P9Z4');
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOSeller VALUES
+  2  (310, 'MODERN WEAR', 'modernwear@gmail.com', '9876501243', '31, Park Avenue, Vellore', '33JKLMN0123Q1Z5');
+
+1 row created.
+
+SQL> SELECT * FROM AJIOSeller;
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       301 FASHION HUB
+fashionhub@gmail.com                               9876501234
+12, Anna Nagar, Chennai
+33ABCDE1234F1Z5
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       302 STYLE MART
+stylemart@gmail.com                                9876501235
+45, Gandhi Road, Tambaram
+33BCDEF2345G2Z6
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       303 TRENDY WEAR
+trendywear@gmail.com                               9876501236
+78, MG Road, Coimbatore
+33CDEFG3456H3Z7
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       304 URBAN FASHION
+urbanfashion@gmail.com                             9876501237
+23, Cross Street, Velachery
+33DEFGH4567J4Z8
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       305 FASHION POINT
+fashionpoint@gmail.com                             9876501238
+56, Bharathi Nagar, Madurai
+33EFGHI5678K5Z9
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       306 STYLE WORLD
+styleworld@gmail.com                               9876501239
+18, Lake View Road, Salem
+33FGHIJ6789L6Z1
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       307 CLOTHING ZONE
+clothingzone@gmail.com                             9876501240
+9, Nehru Street, Trichy
+33GHIJK7890M7Z2
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       308 FASHION STORE
+fashionstore@gmail.com                             9876501241
+41, Gandhi Nagar, Erode
+33HIJKL8901N8Z3
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       309 TRENDY COLLECTION
+trendycollection@gmail.com                         9876501242
+67, Temple Road, Tirunelveli
+33IJKLM9012P9Z4
+
+
+ SELLER_ID SELLER_NAME
+---------- ------------------------------
+EMAIL                                              PHONE_NUMBER
+-------------------------------------------------- ---------------
+ADDRESS
+--------------------------------------------------------------------------------
+GST_NUMBER
+--------------------
+       310 MODERN WEAR
+modernwear@gmail.com                               9876501243
+31, Park Avenue, Vellore
+33JKLMN0123Q1Z5
+
+
+10 rows selected.
+

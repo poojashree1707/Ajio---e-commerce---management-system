@@ -1,0 +1,166 @@
+SQL> CREATE TABLE AJIOInventory (
+  2      Inventory_ID NUMBER PRIMARY KEY,
+  3      Product_ID NUMBER REFERENCES AJIOProduct(Product_ID),
+  4      Seller_ID NUMBER REFERENCES AJIOSeller(Seller_ID),
+  5      Stock_Quantity NUMBER NOT NULL,
+  6      Stock_Status VARCHAR2(20) NOT NULL,
+  7      Last_Updated DATE NOT NULL
+  8  );
+
+Table created.
+
+SQL> INSERT INTO AJIOInventory VALUES
+  2  (401, 101, 301, 50, 'Available', TO_DATE('18-09-2026','DD-MM-YYYY'));
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOInventory VALUES
+  2  (402, 102, 302, 35, 'Available', TO_DATE('18-09-2026','DD-MM-YYYY'));
+
+1 row created.
+
+SQL> 
+SQL> INSERT INTO AJIOInventory VALUES
+  2  (403, 103, 303, 0, 'Unavailable', TO_DATE('18-09-2026','DD-MM-YYYY'));
+
+1 row created.
+
+SQL> 
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> SELECT
+  2      s.Seller_ID,
+  3      s.Seller_Name,
+  4      p.Product_ID,
+  5      p.Product_Name,
+  6      p.Price,
+  7      i.Stock_Quantity,
+  8      i.Stock_Status
+  9  FROM AJIOSeller s
+ 10  JOIN AJIOInventory i
+ 11  ON s.Seller_ID = i.Seller_ID
+ 12  JOIN AJIOProduct p
+ 13  ON i.Product_ID = p.Product_ID
+ 14  ORDER BY s.Seller_ID;
+
+ SELLER_ID SELLER_NAME                    PRODUCT_ID
+---------- ------------------------------ ----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+     PRICE STOCK_QUANTITY STOCK_STATUS
+---------- -------------- --------------------
+       301 FASHION HUB                           101
+Men Casual Shirt
+      1099             50 Available
+
+       302 STYLE MART                            102
+Women Kurti
+       799             35 Available
+
+ SELLER_ID SELLER_NAME                    PRODUCT_ID
+---------- ------------------------------ ----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+     PRICE STOCK_QUANTITY STOCK_STATUS
+---------- -------------- --------------------
+
+       303 TRENDY WEAR                           103
+Running Shoes
+      1499              0 Unavailable
+
+SQL> SELECT
+  2      p.Product_ID,
+  3      p.Product_Name,
+  4      s.Seller_Name,
+  5      i.Stock_Quantity,
+  6      i.Stock_Status
+  7  FROM AJIOInventory i
+  8  JOIN AJIOProduct p
+  9  ON i.Product_ID = p.Product_ID
+ 10  JOIN AJIOSeller s
+ 11  ON i.Seller_ID = s.Seller_ID
+ 12  WHERE i.Stock_Status = 'Available';
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                    STOCK_QUANTITY STOCK_STATUS
+------------------------------ -------------- --------------------
+       101
+Men Casual Shirt
+FASHION HUB                                50 Available
+
+       102
+Women Kurti
+STYLE MART                                 35 Available
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                    STOCK_QUANTITY STOCK_STATUS
+------------------------------ -------------- --------------------
+
+
+SQL> SELECT
+  2      p.Product_ID,
+  3      p.Product_Name,
+  4      s.Seller_Name,
+  5      i.Stock_Quantity,
+  6      i.Stock_Status
+  7  FROM AJIOInventory i
+  8  JOIN AJIOProduct p
+  9  ON i.Product_ID = p.Product_ID
+ 10  JOIN AJIOSeller s
+ 11  ON i.Seller_ID = s.Seller_ID
+ 12  WHERE i.Stock_Status = 'Unavailable';
+
+PRODUCT_ID
+----------
+PRODUCT_NAME
+--------------------------------------------------------------------------------
+SELLER_NAME                    STOCK_QUANTITY STOCK_STATUS
+------------------------------ -------------- --------------------
+       103
+Running Shoes
+TRENDY WEAR                                 0 Unavailable
+
+
+SQL> SELECT
+  2      Stock_Status,
+  3      COUNT(*) AS Total_Products
+  4  FROM AJIOInventory
+  5  GROUP BY Stock_Status
+  6  ORDER BY Stock_Status;
+
+STOCK_STATUS         TOTAL_PRODUCTS
+-------------------- --------------
+Available                         2
+Unavailable                       1
+
+SQL> SELECT
+  2      COUNT(*) AS Total_Inventory_Records,
+  3      SUM(Stock_Quantity) AS Total_Stock,
+  4      SUM(
+  5          CASE
+  6              WHEN Stock_Status = 'Available' THEN 1
+  7              ELSE 0
+  8          END
+  9      ) AS Available_Products,
+ 10      SUM(
+ 11          CASE
+ 12              WHEN Stock_Status = 'Unavailable' THEN 1
+ 13              ELSE 0
+ 14          END
+ 15      ) AS Unavailable_Products
+ 16  FROM AJIOInventory;
+
+TOTAL_INVENTORY_RECORDS TOTAL_STOCK AVAILABLE_PRODUCTS UNAVAILABLE_PRODUCTS
+----------------------- ----------- ------------------ --------------------
+                      3          85                  2                    1
+
+                      
