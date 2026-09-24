@@ -1,0 +1,74 @@
+SQL> SELECT * FROM Orders;
+
+  ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ ------------------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+DELIVERY_
+---------
+       101           1 10-SEP-26         2499 Delivered
+Chennai, Tamil Nadu
+14-SEP-26
+
+       102           2 11-SEP-26         1799 Delivered
+Bangalore, Karnataka
+15-SEP-26
+
+  ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ ------------------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+DELIVERY_
+---------
+
+       103           3 12-SEP-26         3299 Processing
+Coimbatore, Tamil Nadu
+17-SEP-26
+
+       104           4 13-SEP-26         1499 Delivered
+Madurai, Tamil Nadu
+
+  ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ ------------------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+DELIVERY_
+---------
+17-SEP-26
+
+       105           5 14-SEP-26         2899 Shipped
+Hyderabad, Telangana
+18-SEP-26
+
+SQL> SELECT * FROM Orders
+  2  WHERE Order_ID = 103;
+
+  ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ ------------------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+DELIVERY_
+---------
+       103           3 12-SEP-26         3299 Processing
+Coimbatore, Tamil Nadu
+17-SEP-26
+
+SQL> UPDATE Orders
+  2  SET Order_Status = 'Shipped'
+  3  WHERE Order_ID = 103;
+
+1 row updated.
+
+SQL> 
+SQL> SELECT * FROM Orders
+  2  WHERE Order_ID = 103;
+
+  ORDER_ID CUSTOMER_ID ORDER_DAT TOTAL_AMOUNT ORDER_STATUS
+---------- ----------- --------- ------------ ------------------------------
+SHIPPING_ADDRESS
+--------------------------------------------------------------------------------
+DELIVERY_
+---------
+       103           3 12-SEP-26         3299 Shipped
+Coimbatore, Tamil Nadu
+17-SEP-26
